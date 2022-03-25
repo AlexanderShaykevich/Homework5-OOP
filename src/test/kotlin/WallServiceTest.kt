@@ -15,7 +15,7 @@ class WallServiceTest {
             Reposts(1, true), Views(1), " ", 1, true, true, true, true,
             false, Donut(true, 1, " ", true, " "), 1
         )
-        val expected = 11
+        val expected = 1
 
         val result = WallService.add(examplePost).id
 
