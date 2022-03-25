@@ -41,7 +41,4 @@ object WallService {
         return false
     }
 
-    fun removeAll () {
-        posts = emptyArray()
-    }
 }
