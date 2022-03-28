@@ -7,24 +7,19 @@ fun main() {
     val view = Views(1)
     val donut = Donut(true,1," ", false, " ")
 
-    var post1 = Post(0, 1, 2, 1, 1648204060, "Some text1",
-        1, 1,1, comment, copyright, like, repost, view,
-        " ", 1,true, true, true, true,
-        false, donut, 1)
+    var post = Post(0,1,2,3,4,"Text here", 5, 6,
+        7, comment, copyright, like, repost, view, " ", postSource = null, geo = null,
+        8, copyHistory = null, true, true, true, false, false,
+        donut, 9)
 
-    var post2 = Post(0, 1, 2, 1, 1648204060, "Some text2",
-        1, 1,1, comment, copyright, like, repost, view,
-        " ", 1,true, true, true, true,
-        false, donut, 1)
-
-    var post3 = Post(3, 1, 2, 1, 1648204060, "Some text3",
-        1, 1,1, comment, copyright, like, repost, view,
-        " ", 1,true, true, true, true,
-        false, donut, 1)
+    var updatedPost = Post(0,1,2,3,4,"Text here2", 5, 6,
+        7, comment, copyright, like, repost, view, " ", postSource = null, geo = null,
+        8, copyHistory = null, true, true, true, false, false,
+        donut, 9)
 
 
-    WallService.add(post1)
-    println(WallService.update(post3))
+    WallService.add(post)
+    println(WallService.update(updatedPost))
 
 
 }

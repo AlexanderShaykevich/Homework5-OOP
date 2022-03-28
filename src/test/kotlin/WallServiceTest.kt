@@ -8,13 +8,10 @@ class WallServiceTest {
 
     @Test
     fun addNew() {
-        val examplePost = Post(
-            0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val examplePost = Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9)
         val expected = 1
 
         val result = WallService.add(examplePost).id
@@ -24,31 +21,23 @@ class WallServiceTest {
 
     @Test
     fun updateExistingTrue() {
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
 
-        val update = Post(1, 1, 2, 1, 1648204060, "Some text1",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val update = Post(1,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9)
 
         val result = WallService.update(update)
 
@@ -58,31 +47,23 @@ class WallServiceTest {
 
     @Test
     fun updateExistingFalse() {
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
+        WallService.add(Post(0,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9))
 
-        val update = Post(5, 1, 2, 1, 1648204060, "Some text1",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val update = Post(5,1,2,3,4,"Text here", 5, 6,
+            7, comments = null, copyright = null, likes = null, reposts = null, views = null, " ", postSource = null, geo = null,
+            8, copyHistory = null, true, true, true, false, false,
+            donut = null, 9)
 
         val result = WallService.update(update)
 
