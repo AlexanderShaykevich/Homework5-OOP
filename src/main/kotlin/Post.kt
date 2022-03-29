@@ -1,4 +1,4 @@
-import java.util.*
+import attachmentsType.Attachment
 
 data class Post(
     var id: Int,
@@ -15,8 +15,9 @@ data class Post(
     val likes: Likes?,
     val reposts: Reposts?,
     val views: Views?,
-    val postType: String?,
+    val postType: String,
     val postSource: PostSource?,
+    val attachments: Array<Attachment>?,
     val geo: Geo?,
     val signerId: Int,
     val copyHistory: CopyHistory?,
