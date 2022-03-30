@@ -1,4 +1,4 @@
-import attachmentsType.Attachment
+import attachments.Attachment
 
 object WallService {
     private var postId = 1

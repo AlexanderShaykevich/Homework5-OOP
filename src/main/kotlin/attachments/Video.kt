@@ -1,6 +1,8 @@
 package attachments
 
-import attachmentsType.Attachment
-
 class Video: Attachment() {
+
+    override fun toString(): String {
+        return "$type"
+    }
 }
