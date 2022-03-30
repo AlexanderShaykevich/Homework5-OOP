@@ -2,19 +2,17 @@ import org.junit.After
 import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Before
+import WallService.attachments
 
 
 class WallServiceTest {
 
     @Test
     fun addNew() {
-        val examplePost = Post(
-            0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val examplePost = Post(1,1, 1, 1, 100, "Text", 1,
+        1, 1, null, null, null, null, null, " ",
+        null, attachments, null, 1, null, true, true, true,
+        false, false, null, 1)
         val expected = 1
 
         val result = WallService.add(examplePost).id
@@ -24,31 +22,23 @@ class WallServiceTest {
 
     @Test
     fun updateExistingTrue() {
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
 
-        val update = Post(1, 1, 2, 1, 1648204060, "Some text1",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val update = Post(3,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1)
 
         val result = WallService.update(update)
 
@@ -58,31 +48,23 @@ class WallServiceTest {
 
     @Test
     fun updateExistingFalse() {
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
-        WallService.add(Post(0, 1, 2, 1, 1648204060, "Some text",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        ))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
+        WallService.add(Post(0,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1))
 
-        val update = Post(5, 1, 2, 1, 1648204060, "Some text1",
-            1, 1, 1, Comments(1, true, true, true, true),
-            Copyright(1, " ", " ", " "), Likes(1, true, true, true),
-            Reposts(1, true), Views(1), " ", 1, true, true, true, true,
-            false, Donut(true, 1, " ", true, " "), 1
-        )
+        val update = Post(5,1, 1, 1, 100, "Text", 1,
+            1, 1, null, null, null, null, null, " ",
+            null, attachments, null, 1, null, true, true, true,
+            false, false, null, 1)
 
         val result = WallService.update(update)
 

@@ -1,6 +1,9 @@
+import attachments.Attachment
+
 object WallService {
     private var postId = 1
     var posts = emptyArray<Post>()
+    var attachments = emptyArray<Attachment>()
 
     fun add(post: Post): Post {
         post.id = postId
@@ -26,7 +29,11 @@ object WallService {
                     reposts = postToUpdate.reposts,
                     views = postToUpdate.views,
                     postType = postToUpdate.postType,
+                    postSource = postToUpdate.postSource,
+                    attachments = postToUpdate.attachments,
+                    geo = postToUpdate.geo,
                     signerId = postToUpdate.signerId,
+                    copyHistory = postToUpdate.copyHistory,
                     canPin = postToUpdate.canPin,
                     canEdit = postToUpdate.canEdit,
                     isPinned = postToUpdate.isPinned,
