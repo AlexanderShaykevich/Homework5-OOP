@@ -17,14 +17,12 @@ fun main() {
         " ", 1,true, true, true, true,
         false, donut, 1)
 
-    var post3 = Post(3, 1, 2, 1, 1648204060, "Some text3",
-        1, 1,1, comment, copyright, like, repost, view,
+    var post3 = Post(1, 10, 999, 999, 999, "Some text3",
+        999, 999,999, comment, copyright, like, repost, view,
         " ", 1,true, true, true, true,
         false, donut, 1)
 
 
-    WallService.add(post1)
-    println(WallService.update(post3))
 
 
 }
